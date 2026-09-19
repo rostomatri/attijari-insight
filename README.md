@@ -306,7 +306,7 @@ DEBUG=False
 
 **Rostom Atri** — Jeune diplômée en Data Science | PFE Attijari Bank Tunisie
 
-[![LinkedIn](https://linkedin.com/in/rostom-atri )
+https://linkedin.com/in/rostom-atri 
 
 
 ---
