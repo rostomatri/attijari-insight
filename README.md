@@ -188,7 +188,6 @@ Audio de l'employé
 - 🔒 **Non-intrusif** — L'employé contrôle ce qu'il active
 - 📊 **Dashboards complets** — Vue employé + vue administrateur RH
 - 🤖 **100% automatisé** — Aucune intervention RH requise pour le suivi quotidien
-- 🌍 **Multilingue** — BERT Multilingual pour l'analyse en français/arabe
 - ⚡ **Performant** — Cache Redis pour les diagnostics répétitifs
 
 ---
