@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/badge/Partner-Attijari%20Bank%20Tunisia-orange?style=for-the-badge" />
 
 # 🧠 Attijari Insight
-### Système Intelligent IA pour le Bien-Être et la Performance en Banque
+### Système Intelligent IA pour le Bien-Être et la Performance des employés en Banque
 
 > **Projet de Fin d'Études (PFE) — 6 mois | Attijari Bank Tunisie**  
 > Plateforme Full Stack intégrant Computer Vision, Analyse Vocale et NLP pour le suivi automatisé du bien-être des employés bancaires.
@@ -304,11 +304,10 @@ DEBUG=False
 
 ## 👤 Contact
 
-**Votre Nom** — Étudiant Ingénieur | PFE Attijari Bank Tunisie
+**Rostom Atri** — Jeune diplômée en Data Science | PFE Attijari Bank Tunisie
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/votre-profil)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/votre-username)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:votre.email@email.com)
+[![LinkedIn](https://linkedin.com/in/rostom-atri )
+
 
 ---
 
@@ -316,6 +315,6 @@ DEBUG=False
 
 **⭐ N'hésitez pas à star ce projet s'il vous a été utile !**
 
-*Projet réalisé dans le cadre du PFE — [Votre École/Université] × Attijari Bank Tunisie — 2024/2025*
+*Projet réalisé dans le cadre du PFE — [Esprit] × Attijari Bank Tunisie — 2024/2025*
 
 </div>
