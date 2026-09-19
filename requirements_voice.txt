@@ -1,0 +1,6 @@
+librosa==0.10.0
+pydub==0.25.1
+noisereduce==3.0.0
+openai-whisper
+numpy>=1.23.0
+scipy>=1.9.0

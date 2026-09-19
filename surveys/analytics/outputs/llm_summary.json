@@ -1,0 +1,138 @@
+{
+  "global": {
+    "n_rows": 10012
+  },
+  "topics": [
+    {
+      "cluster": 2,
+      "keywords": [
+        "travail",
+        "charge",
+        "réduire",
+        "améliorer",
+        "les",
+        "conditions",
+        "diminuer",
+        "propose"
+      ],
+      "count": 2136
+    },
+    {
+      "cluster": 0,
+      "keywords": [
+        "formation",
+        "professionnelle",
+        "organisation"
+      ],
+      "count": 1123
+    },
+    {
+      "cluster": 1,
+      "keywords": [
+        "plus",
+        "pauses",
+        "propose",
+        "peu",
+        "s'entraide"
+      ],
+      "count": 1068
+    },
+    {
+      "cluster": 8,
+      "keywords": [
+        "plus",
+        "reconnaissance"
+      ],
+      "count": 1036
+    },
+    {
+      "cluster": 6,
+      "keywords": [
+        "plus",
+        "flexibilité",
+        "horaire"
+      ],
+      "count": 1032
+    },
+    {
+      "cluster": 3,
+      "keywords": [
+        "communication",
+        "améliorer",
+        "mauvaise"
+      ],
+      "count": 979
+    },
+    {
+      "cluster": 4,
+      "keywords": [
+        "augmenter",
+        "salaire"
+      ],
+      "count": 958
+    },
+    {
+      "cluster": 7,
+      "keywords": [
+        "télétravail"
+      ],
+      "count": 880
+    },
+    {
+      "cluster": 5,
+      "keywords": [
+        "aucune",
+        "suggestion"
+      ],
+      "count": 800
+    }
+  ],
+  "topic_examples": {
+    "1": [
+      "plus de pauses",
+      "plus de pauses",
+      "je propose un peu plus de s'entraide"
+    ],
+    "2": [
+      "je propose des activites pour diminuer le stress quotidien",
+      "diminuer charge de travail",
+      "améliorer les conditions de travail"
+    ],
+    "3": [
+      "communication"
+    ],
+    "7": [
+      "télétravail",
+      "télétravail",
+      "télétravail"
+    ],
+    "5": [
+      "aucune suggestion",
+      "aucune suggestion",
+      "aucune suggestion"
+    ],
+    "6": [
+      "plus de flexibilité horaire",
+      "plus de flexibilité horaire",
+      "plus de flexibilité horaire"
+    ],
+    "4": [
+      "augmenter le salaire",
+      "augmenter le salaire",
+      "augmenter le salaire"
+    ],
+    "0": [
+      "formation professionnelle",
+      "formation professionnelle",
+      "organisation"
+    ],
+    "8": [
+      "plus de reconnaissance",
+      "plus de reconnaissance",
+      "plus de reconnaissance"
+    ]
+  },
+  "meta": {
+    "k": 9
+  }
+}
