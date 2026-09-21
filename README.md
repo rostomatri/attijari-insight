@@ -313,7 +313,7 @@ DEBUG=False
 
 ### Dashboard Employé
 
-#👁️ Module Comportemental — Active sa caméra pour une analyse en temps réel de sa fatigue, de ses yeux et de sa posture, avec alertes instantanées
+👁️ Module Comportemental — Active sa caméra pour une analyse en temps réel de sa fatigue, de ses yeux et de sa posture, avec alertes instantanées
 
 🎙️ Module Vocal — Répond aux questions vocales, reçoit son analyse de sentiment et confirme ou ignore les recommandations de compétences proposées avant envoi à la RH
 
