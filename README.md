@@ -197,27 +197,51 @@ Audio de l'employé
 ```
 attijari-insight/
 │
-├── src/                        # Backend Django
-│   ├── behavioral/             # Module Computer Vision (MediaPipe)
-│   ├── voice/                  # Module Analyse Vocale (Whisper, Wav2Vec2, BERT)
-│   ├── surveys/                # Module Questionnaire adaptatif
-│   ├── dashboard/              # API Dashboard employé & admin
-│   ├── recommendations/        # Moteur de recommandation compétences
-│   └── core/                   # Auth, modèles de base, config
+├── vision/                          # Module 1 — Computer Vision (MediaPipe)
+│   ├── cv/
+│   │   ├── pipeline.py              # Pipeline principal EAR / PERCLOS / Clignement
+│   │   ├── real_time_posture.py     # Analyse posturale en temps réel
+│   │   ├── llm_service.py           # Intégration Gemini API (diagnostic IA)
+│   │   ├── medical_rules.py         # Seuils et règles de détection fatigue
+│   │   └── report_builder.py        # Construction des rapports comportementaux
+│   ├── models.py                    # Modèles BDD (métriques temps réel, résultats)
+│   ├── views.py                     # API endpoints Computer Vision
+│   ├── tasks.py                     # Tâches asynchrones Celery
+│   └── migrations/                  # Migrations Django
 │
-├── frontend/                   # Application React.js
-│   ├── src/
-│   │   ├── components/         # Composants réutilisables
-│   │   ├── pages/              # Pages principales (Dashboard, Modules)
-│   │   └── charts/             # Visualisations Recharts
-│   └── package.json
+├── surveys/                         # Module 2 & 3 — Vocal + Questionnaire adaptatif
+│   ├── analytics/
+│   │   ├── adaptive_questionnaire.py  # Génération questionnaire (Grok + NLP)
+│   │   ├── baseline_nlp.py            # NLP baseline
+│   │   ├── incremental_nlp.py         # NLP incrémental
+│   │   ├── real_time_posture.py       # Analyse posture (intégration)
+│   │   ├── risk_cache.py              # Cache des scores de risque
+│   │   └── trigger.py                 # Déclencheurs adaptatifs
+│   ├── voice_utils.py               # Whisper / Wav2Vec2 / BERT — pipeline vocal
+│   ├── models.py                    # Modèles BDD (VoiceAnalysis, PostureMetric…)
+│   ├── views.py                     # API endpoints vocal & questionnaire
+│   ├── serializers.py               # Sérialisation DRF
+│   └── migrations/                  # 15 migrations Django
 │
-├── surveys/                    # Logique métier questionnaires
-├── manage.py                   # Point d'entrée Django
-├── requirements.txt            # Dépendances Python (vision + core)
-├── requirements_voice.txt      # Dépendances Python (audio/NLP)
-├── package.json                # Dépendances Node.js
-├── .env.example                # Template variables d'environnement
+├── pfe/                             # Configuration Django
+│   ├── settings.py                  # Paramètres (DB, Redis, apps installées)
+│   ├── urls.py                      # Routage principal
+│   ├── celery.py                    # Configuration Celery (tâches async)
+│   └── wsgi.py / asgi.py
+│
+├── frontend/                        # Application React.js
+│   └── (submodule — voir repo dédié)
+│
+├── src/                             # Composants React partagés
+│   ├── App.jsx
+│   └── components/
+│       └── AnonymousLogin.jsx
+│
+├── manage.py                        # Point d'entrée Django
+├── generate_skills.py               # Script génération du référentiel compétences
+├── requirements.txt                 # Dépendances Python (vision + core)
+├── requirements_voice.txt           # Dépendances Python (audio / NLP)
+├── .env.example.txt                 # Template variables d'environnement
 └── README.md
 ```
 
@@ -235,19 +259,19 @@ attijari-insight/
 
 ```bash
 # Cloner le projet
-git clone https://github.com/votre-username/attijari-insight.git
+git clone https://github.com/rostomatri/attijari-insight.git
 cd attijari-insight
 
 # Environnement virtuel
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # Windows : venv\Scripts\activate
 
 # Dépendances
 pip install -r requirements.txt
 pip install -r requirements_voice.txt
 
 # Variables d'environnement
-cp .env.example .env
+cp .env.example.txt .env
 # Remplir .env avec vos clés API (Gemini, Grok, DB credentials)
 
 # Base de données
@@ -288,10 +312,16 @@ DEBUG=False
 ## 📊 Aperçu des Dashboards
 
 ### Dashboard Employé
-- Vue synthétique de son état du jour (fatigue, sentiment, posture)
-- Historique de ses sessions comportementales
-- Recommandations de compétences reçues
-- Questionnaires adaptatifs à compléter
+👁️ Module Comportemental — Active sa caméra pour une analyse en temps réel de sa fatigue, de ses yeux et de sa posture, avec alertes instantanées
+🎙️ Module Vocal — Répond aux questions vocales, reçoit son analyse de sentiment et confirme ou ignore les recommandations de compétences proposées avant envoi à la RH
+📋 Module Questionnaire — Répond au questionnaire adaptatif généré selon son profil
+
+Vue synthétique de son tableau de bord :
+
+Récapitulatif de son état du jour (score fatigue, sentiment, posture)
+Historique de ses sessions comportementales et vocales
+Recommandations de compétences reçues et leur statut (envoyé / ignoré)
+Diagnostic personnalisé généré par Gemini
 
 ### Dashboard Administrateur (RH)
 - Vue globale de l'équipe avec agrégats anonymisés
